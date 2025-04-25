@@ -1,0 +1,19 @@
+services:
+#  myapp:
+#    build: .
+#    ports:
+#      - 8000:8001
+#    networks:
+#      - mynet
+  mymemcached:
+    image: memcached:1.6.38-alpine
+    command:
+      - --memory-limit=64
+    ports:
+      - 11211:11211
+    restart: always
+    networks:
+      - mynet
+networks:
+  mynet:
+    driver: bridge
