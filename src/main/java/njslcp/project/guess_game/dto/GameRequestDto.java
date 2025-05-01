@@ -49,7 +49,7 @@ public class GameRequestDto {
 
     @JsonView(Views.ForfeitView.class)
     @NotNull(groups = Groups.ForfeitGroup.class)
-    @AssertTrue
+    @AssertTrue(groups = Groups.ForfeitGroup.class)
     private Boolean forfeit;
 
 
